@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="km">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.8">
+  <title>ផែនការសកម្មភាពសាលារៀន | ស្តង់ដាទី១</title>
+  <link rel="stylesheet" href="/theme.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <header class="no-print border-b border-[#d7e4e2] bg-[var(--color-surface)]">
+    <div class="mx-auto flex max-w-[1500px] flex-col gap-6 px-5 py-8 sm:px-8 lg:flex-row lg:items-end lg:justify-between">
+      <div>
+        <div class="mb-3 inline-flex items-center gap-2 rounded-[var(--radius)] bg-[#dff0ed] px-3 py-1 text-sm font-bold text-[var(--color-primary)]">
+          <span class="h-2 w-2 rounded-full bg-[var(--color-primary)]"></span>
+          ផែនការកែលម្អសាលារៀន
+        </div>
+        <h1 class="max-w-3xl text-3xl font-bold tracking-tight text-[var(--color-text)] sm:text-4xl" style="font-family: var(--font-heading);">ផែនការសកម្មភាព និងថវិកា</h1>
+        <p class="mt-3 max-w-2xl text-sm leading-7 text-[var(--color-muted)]">តារាងតាមដានលទ្ធផលរំពឹងទុក សកម្មភាព ក្របខណ្ឌពេលវេលា អ្នកទទួលខុសត្រូវ និងប្រភពធនធាន។</p>
+      </div>
+      <button id="printButton" class="inline-flex items-center justify-center gap-2 rounded-[var(--radius)] bg-[var(--color-primary)] px-5 py-3 text-sm font-bold text-[var(--color-primary-contrast)] shadow-sm transition hover:opacity-90">
+        បោះពុម្ពតារាង
+      </button>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-[1500px] px-5 py-7 sm:px-8 sm:py-10">
+    <section class="no-print mb-6 flex flex-col gap-4 rounded-[var(--radius)] border border-[#d7e4e2] bg-[var(--color-surface)] p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-5">
+      <div class="relative w-full sm:max-w-xl">
+        <label for="searchInput" class="sr-only">ស្វែងរកក្នុងតារាង</label>
+        <input id="searchInput" type="search" placeholder="ស្វែងរកលទ្ធផល សកម្មភាព ឬសូចនាករ..." class="w-full rounded-[var(--radius)] border border-[#c8dcd9] bg-[var(--color-bg)] px-5 py-3 text-sm text-[var(--color-text)] outline-none transition placeholder:text-[var(--color-muted)] focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[#b9ded9]">
+      </div>
+      <div class="flex items-center justify-between gap-2 text-sm text-[var(--color-muted)] sm:justify-end">
+        <span id="resultCount">0 ជួរ</span>
+        <button id="clearSearch" class="font-bold text-[var(--color-primary)] hover:underline">សម្អាត</button>
+      </div>
+    </section>
+
+    <div class="mb-4 flex items-center justify-between gap-4">
+      <div>
+        <h2 class="text-xl font-bold text-[var(--color-text)]">ស្តង់ដាទី១៖ លទ្ធផលសិក្សារបស់សិស្ស</h2>
+        <p class="mt-1 text-sm text-[var(--color-muted)]">រមូរទៅឆ្វេង ឬស្តាំ ដើម្បីមើលជួរឈរទាំងអស់</p>
+      </div>
+      <span class="hidden rounded-full bg-[#e8f4f2] px-3 py-1 text-xs font-bold text-[var(--color-primary)] sm:inline-block">std1</span>
+    </div>
+
+    <div class="table-shell overflow-x-auto rounded-[var(--radius)] border border-[#d7e4e2] bg-[var(--color-surface)] shadow-[0_12px_35px_rgba(23,59,59,0.08)]">
+      <table id="planTable" class="plan-table">
+        <colgroup>
+          <col style="width: 31px;">
+          <col style="width: 229px;">
+          <col style="width: 229px;">
+          <col style="width: 41px;">
+          <col style="width: 41px;">
+          <col style="width: 41px;">
+          <col style="width: 41px;">
+          <col style="width: 100px;">
+          <col style="width: 62px;">
+          <col style="width: 62px;">
+          <col style="width: 62px;">
+          <col style="width: 100px;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th rowspan="3">ល.រ</th>
+            <th rowspan="3">លទ្ធផលរំពឹងទុក<br>(តាមស្តង់ដា និងសកម្មភាពគន្លឹះ)</th>
+            <th rowspan="3">សកម្មភាព</th>
+            <th colspan="4" rowspan="2">ក្របខណ្ឌពេលវេលា<br>(ត្រីមាស)</th>
+            <th rowspan="3">អ្នកទទួលខុសត្រូវ</th>
+            <th colspan="3">ប្រភពធនធាន</th>
+            <th rowspan="2">ថវិកាសរុប</th>
+          </tr>
+          <tr>
+            <th>រដ្ឋ</th>
+            <th>សហគមន៍</th>
+            <th>ដៃគូ</th>
+          </tr>
+          <tr>
+            <th class="quarter">1</th>
+            <th class="quarter">2</th>
+            <th class="quarter">3</th>
+            <th class="quarter">4</th>
+            <th class="resource">1</th>
+            <th class="resource">2</th>
+            <th class="resource">3</th>
+            <th class="budget">4=(1+2+3)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="section-row">
+            <td colspan="2">ស្តង់ដាទី១៖ លទ្ធផលសិក្សារបស់សិស្ស</td>
+            <td colspan="10"></td>
+          </tr>
+          <tr class="section-row">
+            <td colspan="2">១. ការប្រមូលកុមារចូលរៀន</td>
+            <td colspan="10"></td>
+          </tr>
+          <tr>
+            <td class="number">១.១</td>
+            <td>ភាគរយសិស្សថ្នាក់ទី១ចូលរៀនបានត្រឹមត្រូវតាមអាយុ ១០០%</td>
+            <td>
+              <p>• រៀបចំ ការចុះបញ្ជីសិស្សថ្មី</p>
+              <p>• ផ្សព្វផ្សាយអំពី អត្ថប្រយោជន៍នៃការចូលរៀន តាមសហគមន៍</p>
+              <p>• សហការជាមួយ មាតាបិតា និងអាជ្ញាធរ ដើម្បីធានាថាកុមារទាំងអស់ចូលរៀនតាមអាយុ</p>
+            </td>
+            <td colspan="4"></td>
+            <td></td>
+            <td colspan="4"></td>
+          </tr>
+          <tr class="section-row">
+            <td colspan="2">២. សិស្សរៀនបានគង់វង្សក្នុងសាលារៀន</td>
+            <td colspan="10"></td>
+          </tr>
+          <tr>
+            <td class="number">២.១</td>
+            <td>ភាគរយសិស្សបោះបង់ការសិក្សាបានថយចុះមកត្រឹម ២%</td>
+            <td>
+              <p>• ធ្វើ សម្ភាសន៍សិស្ស និងមាតាបិតា ដើម្បីរកមូលហេតុបោះបង់</p>
+              <p>• ផ្តល់ជំនួយ សម្ភារៈសិក្សា ឬអាហារូបករណ៍</p>
+              <p>• បង្កើត ក្រុមគាំទ្រសិស្សក្នុងសាលា ដើម្បីជួយពង្រឹងចិត្តស្មោះត្រង់ក្នុងការរៀន</p>
+            </td>
+            <td colspan="4"></td>
+            <td></td>
+            <td colspan="4"></td>
+          </tr>
+          <tr>
+            <td class="number">២.២</td>
+            <td>ភាគរយសិស្សរៀនត្រួតថ្នាក់បានថយចុះមកត្រឹម ១%</td>
+            <td>
+              <p>• រៀបចំ ថ្នាក់បង្រៀនបន្ថែម (Remedial Class) សម្រាប់សិស្សដែលមានលទ្ធផលទាប</p>
+              <p>• តាមដាន លទ្ធផលសិក្សា និងពិន្ទុ ជាប្រចាំ</p>
+              <p>• ប្រើ វិធីសាស្រ្តបង្រៀនចម្រុះ ដើម្បីឲ្យសិស្សយល់បានងាយ</p>
+            </td>
+            <td colspan="4"></td>
+            <td></td>
+            <td colspan="4"></td>
+          </tr>
+          <tr class="section-row">
+            <td colspan="2">៣. លទ្ធផលសិក្សារបស់សិស្ស</td>
+            <td colspan="10"></td>
+          </tr>
+          <tr>
+            <td class="number">៣.១</td>
+            <td>ភាគរយសិស្សមាននិទ្ទេស A B និង C មុខវិជ្ជាភាសាខ្មែរ មានការកើនឡើង</td>
+            <td>
+              <p>• ពង្រឹងការបង្រៀនលើការសរសេរអត្ថបទ (រៀបរាប់ ពិពណ៌នា និងរបាយការណ៍) វេយ្យាករណ៍ និងការអានយល់ន័យស៊ីជម្រៅ។</p>
+              <p>• រៀបចំថ្នាក់បង្រៀនបំប៉ន (Remedial Teaching) ដល់សិស្សទទួលបាននិទ្ទេស D និង E និងផ្តល់លំហាត់ប្រឈមបន្ថែម (Advanced Tasks) សម្រាប់រក្សាការពារនិទ្ទេស A B C។</p>
+            </td>
+            <td colspan="4"></td>
+            <td></td>
+            <td colspan="4"></td>
+          </tr>
+          <tr>
+            <td class="number">៣.២</td>
+            <td>ភាគរយសិស្សមាននិទ្ទេស A B និង C មុខវិជ្ជាគណិតវិទ្យា មានការកើនឡើង</td>
+            <td>
+              <p>• ពង្រឹងការបង្រៀនគំនិតវិភាគ ការដោះស្រាយលំហាត់ស្មុគស្មាញ និងការអនុវត្តរូបមន្តជាក់ស្តែងតាមរយៈការប្រើប្រាស់សម្ភារឧបទេស។</p>
+              <p>• បង្កើតក្រុមសិក្សារួមគ្នា (Peer Tutoring) និងរៀបចំម៉ោងដោះស្រាយលំហាត់កម្រិតខ្ពស់សម្រាប់សិស្សពូកែ ព្រមទាំងជួយសង្គ្រោះសិស្សខ្សោយ។</p>
+            </td>
+            <td colspan="4"></td>
+            <td></td>
+            <td colspan="4"></td>
+          </tr>
+          <tr>
+            <td class="number">៣.៣</td>
+            <td>ភាគរយសិស្សថ្នាក់ទី៣ មានសមត្ថភាពអានតាមស្តង់ដា (៤៥ ទៅ ៦០ពាក្យក្នុង១នាទី) មានការកើនឡើង</td>
+            <td>
+              <p>• អនុវត្តវិធីសាស្ត្រអំណានថ្នាក់ដំបូង ដោយផ្តោតលើការផ្សំសំឡេង (ព្យញ្ជនៈ ស្រៈ ជើងពាក្យ និងសញ្ញា) និងការអានអត្ថបទខ្លីៗដដែលៗ (Repeated Reading)។</p>
+              <p>• ប្រើប្រាស់បណ្ណអក្សរ (Flashcards) និងសកម្មភាពល្បែងអានអក្សរក្នុងថ្នាក់រៀនដើម្បីជំរុញចំណាប់អារម្មណ៍សិស្ស។</p>
+            </td>
+            <td colspan="4"></td>
+            <td></td>
+            <td colspan="4"></td>
+          </tr>
+          <tr>
+            <td class="number">៣.៤</td>
+            <td>ភាគរយសិស្សថ្នាក់ទី៦ មានសមត្ថភាពអានតាមស្តង់ដា (១០០ ទៅ ១២០ពាក្យក្នុង១នាទី) មានការកើនឡើង</td>
+            <td>
+              <p>• ជំរុញទម្លាប់អានសៀវភៅបណ្ណាល័យ រឿងខ្លី ឬអត្ថបទផ្សេងៗ និងបង្រៀនបច្ចេកទេសអានចាប់យកអត្ថន័យលឿន (Skimming and Scanning)។</p>
+              <p>• រៀបចំការប្រកួតប្រជែងអានល្បឿន និងការយល់ន័យក្នុងកម្រិតថ្នាក់រៀន ឬកម្រិតសាលារៀន។</p>
+            </td>
+            <td colspan="4"></td>
+            <td></td>
+            <td colspan="4"></td>
+          </tr>
+          <tr class="section-row">
+            <td colspan="2">៤. ស្ថានភាពអាហារូបត្ថម្ភ (ការគាំទ្រ ផ្នែក សុខភាពនិងសុវត្ថិភាពសិក្សា)</td>
+            <td colspan="10"></td>
+          </tr>
+          <tr>
+            <td class="number">៤.១</td>
+            <td>ភាគរយសិស្សមានស្ថានភាពអាហារូបត្ថម្ភធម្មតា</td>
+            <td>
+              <p>• សហការជាមួយមណ្ឌលសុខភាព ឬអង្គការដៃគូដើម្បីពិនិត្យសុខភាព និងវាស់កម្ពស់-ទម្ងន់សិស្សជាប្រចាំ។</p>
+              <p>• រៀបចំកម្មវិធីអប់រំសុខភាព និងអាហារូបត្ថម្ភដល់សិស្ស និងមាតាបិតា ព្រមទាំងត្រួតពិនិត្យ និងហាមឃាត់ការលក់ចំណីអាហារគ្មានគុណភាព ឬខូចគុណភាពនៅក្បែរ និងក្នុងបរិវេណសាលារៀន។</p>
+            </td>
+            <td colspan="4"></td>
+            <td></td>
+            <td colspan="4"></td>
+          </tr>
+          <tr>
+            <td class="number">៤.២</td>
+            <td>ភាគរយសិស្សដែលមានបញ្ហាអាហារូបត្ថម្ភ ទទួលបានកិច្ចអន្តរាគមន៍</td>
+            <td>
+              <p>• បង្កើតបញ្ជីឈ្មោះសិស្សដែលមានបញ្ហាអាហារូបត្ថម្ភ (ក្រិន ស្គមស្គាំង ឬធាត់ជ្រុល) និងផ្តល់អាហារបំប៉ន (ប្រសិនបើមានកម្មវិធីអាហារូបត្ថម្ភរបស់សាលា ឬកាកបាទក្រហម) ព្រមទាំងបញ្ជូនករណីធ្ងន់ធ្ងរទៅមណ្ឌលសុខភាព។</p>
+              <p>• ណែនាំដល់អាណាព្យាបាលអំពីរបបអាហារដែលមានជីវជាតិគ្រប់គ្រាន់សម្រាប់កុមារ។</p>
+            </td>
+            <td colspan="4"></td>
+            <td></td>
+            <td colspan="4"></td>
+          </tr>
+          <tr>
+            <td class="number">៤.៣</td>
+            <td>ភាគរយសិស្សក្រីក្រទទួលបានអាហារូបករណ៍ ឬការឧបត្ថម្ភនានា</td>
+            <td>
+              <p>• បង្កើតគណៈកម្មការពិនិត្យ និងជ្រើសរើសសិស្សក្រីក្រ ឬងាយរងគ្រោះតាមលក្ខខណ្ឌវិនិច្ឆ័យច្បាស់លាស់ និងត្រឹមត្រូវ។</p>
+              <p>• រៀបចំកៀរគររកសប្បុរសជន ឬសហការជាមួយក្រសួង-ស្ថាប័ន និងអង្គការដៃគូដើម្បីផ្តល់ថវិកាឧបត្ថម្ភ សម្ភារសិក្សា ឬអង្ករដល់គ្រួសារសិស្សក្រីក្រ។</p>
+            </td>
+            <td colspan="4"></td>
+            <td></td>
+            <td colspan="4"></td>
+          </tr>
+          <tr class="section-row">
+            <td colspan="2">៥. សីលធម៌ និងឥរិយាបថរបស់សិស្ស</td>
+            <td colspan="10"></td>
+          </tr>
+          <tr>
+            <td class="number">៥.១</td>
+            <td>ភាគរយកុមារទទួលបានការប្រឹក្សាយោបល់</td>
+            <td>
+              <p>• បង្កើតបន្ទប់ប្រឹក្សាយោបល់ ឬចាត់តាំងគ្រូបន្ទុកបន្ទប់ និងគ្រូប្រឹក្សាសុខភាពផ្លូវចិត្ត/អប្សរាសាលារៀន ដើម្បីផ្តល់ការណែនាំដល់សិស្សដែលមានបញ្ហាអាកប្បកិរិយា បញ្ហាគ្រួសារ ឬបញ្ហាស្ត្រេសក្នុងការសិក្សា។</p>
+              <p>• អនុវត្តកម្មវិធីអប់រំសីលធម៌ និងការលើកទឹកចិត្តតាមរយៈការប្រជុំគោរពទង់ជាតិ ឬម៉ោងសីលធម៌។</p>
+            </td>
+            <td colspan="4"></td>
+            <td></td>
+            <td colspan="4"></td>
+          </tr>
+          <tr>
+            <td class="number">៥.២</td>
+            <td>ភាគរយថ្នាក់រៀនដាក់ពិន្ទុ បំណិនសម្បទា និងចរិយាសម្បទាដល់សិស្សប្រចាំឆ្នាំ</td>
+            <td>
+              <p>• ជំរុញ និងណែនាំដល់គ្រូបង្រៀនគ្រប់ថ្នាក់ឱ្យយកចិត្តទុកដាក់ដាក់ពិន្ទុវាយតម្លៃលើផ្នែកចរិយាសម្បទា (សេចក្តីថ្លៃថ្នូរ ការគោរពវិន័យ ការរួសរាយរាក់ទាក់) និងបំណិនសម្បទា (ការងារក្រុម ការដោះស្រាយបញ្ហា) ក្នុងកាតរបាយការណ៍លទ្ធផលសិក្សារបស់សិស្ស។</p>
+              <p>• ត្រួតពិនិត្យ និងវាយតម្លៃការកត់ត្រាពិន្ទុទាំងនេះដោយនាយកសាលា ឬនាយករងបច្ចេកទេស។</p>
+            </td>
+            <td colspan="4"></td>
+            <td></td>
+            <td colspan="4"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <script src="/script.js"></script>
+</body>
+
+</html>
