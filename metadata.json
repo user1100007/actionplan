@@ -1,0 +1,8 @@
+{
+  "name": "School Action Plan & EFMS Manager",
+  "description": "Cambodian MoEYS School Action Plan, Statement of Financing (SOF), and Education Financial Management System (EFMS) data viewer and planning tool.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

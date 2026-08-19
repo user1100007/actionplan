@@ -1,0 +1,29 @@
+{
+  "entities": {
+    "UserProfile": {
+      "collection": "users",
+      "fields": {
+        "email": { "type": "string", "required": false },
+        "displayName": { "type": "string", "required": false },
+        "photoURL": { "type": "string", "required": false },
+        "schoolName": { "type": "string", "required": false },
+        "province": { "type": "string", "required": false },
+        "createdAt": { "type": "timestamp", "required": true },
+        "lastActive": { "type": "timestamp", "required": true }
+      }
+    },
+    "SchoolPlan": {
+      "collection": "schoolPlans",
+      "fields": {
+        "userId": { "type": "string", "required": true },
+        "schoolName": { "type": "string", "required": false },
+        "academicYear": { "type": "string", "required": false },
+        "actionPlanData": { "type": "array", "required": true },
+        "sofData": { "type": "array", "required": true },
+        "efmsData": { "type": "array", "required": true },
+        "simulatorState": { "type": "object", "required": false },
+        "updatedAt": { "type": "timestamp", "required": true }
+      }
+    }
+  }
+}
